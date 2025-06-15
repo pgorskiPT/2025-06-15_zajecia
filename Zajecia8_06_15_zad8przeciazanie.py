@@ -1,4 +1,5 @@
 from  multipledispatch import dispatch
+# pip install multipledispatch
 
 class Printer:
     @dispatch(str)
