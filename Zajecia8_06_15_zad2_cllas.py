@@ -5,6 +5,7 @@ class Person:
 
     @property
     def name(self):
+        """Geter - pobiera wartosc"""
         print("pobieram imie")
         return self.__name
 
@@ -16,6 +17,12 @@ class Person:
             raise ValueError("To musi byc string")
         self.__name = value
 
+    @name.deleter
+    def name(self):
+        """ Deleter - kasowanie atrybutu """
+        print ("Usuwam imie")
+        del self.__name
+
 p=Person("Alicja")
 print(p.name)
 
@@ -23,5 +30,8 @@ print(p.name)
 p.name="Janek"
 print(p.name)
 
-p.name=123
-print(p.name)
+# p.name=123
+# print(p.name)
+
+del p.name
+# print(p.name)
